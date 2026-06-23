@@ -117,7 +117,7 @@
                 box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
             }
 
-            /* 🖥️ INTERACTIVE CODER WIDGET - ΓΙΑ ΜΕΓΑΛΕΣ ΟΘΟΝΕΣ PC */
+            /* 🖥️ INTERACTIVE CODER WIDGET - ΜΟΝΟ ΓΙΑ ΜΕΓΑΛΕΣ ΟΘΟΝΕΣ PC */
             .center-coder-widget {
                 position: fixed;
                 top: 50%;
@@ -138,20 +138,9 @@
                 gap: 15px;
             }
 
-            /* 💻 ΓΙΑ LAPTOPS ΚΑΙ ΜΙΚΡΟΤΕΡΕΣ ΟΘΟΝΕΣ PC */
+            /* 🔒 ΑΣΦΑΛΗΣ ΑΠΟΚΡΥΨΗ: Αν η οθόνη είναι μικρότερη από 1400px, το widget εξαφανίζεται 
+               για να μην κρύβει ΠΟΤΕ τα γράμματα σε laptops, tablets ή κινητά */
             @media (max-width: 1400px) {
-                .center-coder-widget {
-                    right: 15px;
-                    width: 260px;
-                    padding: 1rem;
-                }
-                .widget-code-text {
-                    font-size: 0.7rem;
-                }
-            }
-
-            /* 📱 ΓΙΑ ΤΑ ΚΙΝΗΤΑ ΚΑΙ TABLETS - Κρύβουμε το widget για καθαρό design */
-            @media (max-width: 992px) {
                 .center-coder-widget {
                     display: none !important;
                 }
