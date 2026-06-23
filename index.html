@@ -150,19 +150,12 @@
                 }
             }
 
-            /* 📱 ΓΙΑ ΤΑ ΚΙΝΗΤΑ ΚΑΙ TABLETS */
-            @media (max-width: 992px) {
-                .center-coder-widget {
-                    position: relative;
-                    top: 0;
-                    transform: none;
-                    right: 0;
-                    margin: 40px auto;
-                    width: 100%;
-                    max-width: 320px;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-                }
-            }
+                  /* 📱 ΓΙΑ ΤΑ ΚΙΝΗΤΑ ΚΑΙ TABLETS: Κρύβουμε το widget για πιο καθαρό design */
+@media (max-width: 992px) {
+    .center-coder-widget {
+        display: none !important;
+    }
+}
 
             .illustration-box {
                 position: relative;
