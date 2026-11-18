@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Portfolio - Ζήσης Τρίγκας" />
-        <meta name="author" content="Ζήσης Τρίγκας" />
+        <meta name="description" content="Portfolio - Zisis Trigkas" />
+        <meta name="author" content="Zisis Trigkas" />
         <title> 💻 ZISIS TRIGKAS PORTFOLIO</title>
         <link class="js-profile-img" rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -56,6 +56,41 @@
             hr {
                 border-top: 1px solid #1f2438 !important;
                 opacity: 1;
+            }
+
+            /* 🌐 LANGUAGE TOGGLE */
+            .lang-toggle {
+                position: fixed;
+                top: 12px;
+                left: 12px;
+                z-index: 1050;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 12px;
+                background-color: #161b33;
+                color: #00ff66;
+                border: 1px solid #00ff66;
+                border-radius: 20px;
+                font-family: 'Muli', sans-serif;
+                font-weight: 800;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+            .lang-toggle:hover {
+                background-color: #00ff66;
+                color: #0a0b10;
+                box-shadow: 0 0 15px rgba(0, 255, 102, 0.6);
+            }
+            .lang-toggle:focus-visible {
+                outline: 2px solid #00f0ff;
+                outline-offset: 2px;
+            }
+            @media (max-width: 991.98px) {
+                /* Αφήνει χώρο για το κουμπί γλώσσας στο mobile menu */
+                #sideNav .navbar-brand { margin-left: 5rem; }
             }
 
             /* 📑 HIGH-TECH CARDS (PROJECTS & CERTS) */
@@ -386,6 +421,16 @@
             .dev-icons .list-inline-item:hover i {
                 color: #00ff66;
             }
+            .dev-icons .list-inline-item svg {
+                width: 3rem;
+                height: 3rem;
+                vertical-align: middle;
+                fill: #a3b8cc;
+                transition: fill 0.3s;
+            }
+            .dev-icons .list-inline-item:hover svg {
+                fill: #00ff66;
+            }
             .fa-check {
                 color: #00ff66;
             }
@@ -409,32 +454,37 @@
     </head>
     <body id="page-top">
 
+        <!-- 🌐 Language toggle (πάνω αριστερά) -->
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language to Greek">
+            <i class="fas fa-globe"></i><span id="langLabel">EL</span>
+        </button>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">ΖΗΣΗΣ ΤΡΙΓΚΑΣ</span>
+                <span class="d-block d-lg-none" data-i18n="brand">ZISIS TRIGKAS</span>
                 <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="zisis.jpg" alt="Zisis Trigkas Profile" /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ΣΧΕΤΙΚΑ ΜΕ ΜΕΝΑ</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">EKΠΑΙΔΕΥΣΗ</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">ΕΜΠΕΙΡΙΑ</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">PROJECTS</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">ΠΙΣΤΟΠΟΙΗΣΕΙΣ</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">ΔΕΞΙΟΤΗΤΕΣ</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">ΕΝΔΙΑΦΕΡΟΝΤΑ</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about" data-i18n="nav_about">ABOUT ME</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education" data-i18n="nav_edu">EDUCATION</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience" data-i18n="nav_exp">EXPERIENCE</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects" data-i18n="nav_proj">PROJECTS</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards" data-i18n="nav_cert">CERTIFICATIONS</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills" data-i18n="nav_skills">SKILLS</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests" data-i18n="nav_int">INTERESTS</a></li>
                 </ul>
             </div>
         </nav>
 
         <div class="container-fluid p-0">
+
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
-                    <h1 class="mb-0">ΖΗΣΗΣ <span class="text-primary">ΤΡΙΓΚΑΣ</span></h1>
-                    <div class="subheading mb-5">ΒΥΡΩΝΑΣ - ΑΘΗΝΑ, ΕΛΛΑΔΑ - (+30) 6908297370 - <a href="mailto:zisisofficial@gmail.com" style="color: #00f0ff;">zisisofficial@gmail.com</a></div>
-                    <p class="lead mb-5">Γειά σας! Είμαι ένας επαγγελματίας με ευρεία γνώση στο χώρο της πληροφορικής και της επικοινωνίας. 
-                        Χαρακτηρίζομαι από τη συνεχή διάθεση μου για μάθηση και εξέλιξη, παρακολουθώντας στενά τις τάσεις της αγοράς και τις νέες τεχνολογίες. Στόχος μου είναι να εφαρμόζω τις γνώσεις μου με σκοπό τη βελτιστοποίηση και την ασφάλεια των συστημάτων, προσφέροντας πάντα ισχυρές τεχνικές λύσεις με το καλύτερο δυνατό αποτέλεσμα.</p>
+                    <h1 class="mb-0" data-i18n="h1">ZISIS <span class="text-primary">TRIGKAS</span></h1>
+                    <div class="subheading mb-5" data-i18n="contact">ATHENS, GREECE - (+30) 6908297370 - <a href="mailto:zisisofficial@gmail.com" style="color: #00f0ff;">zisisofficial@gmail.com</a></div>
+                    <p class="lead mb-5" data-i18n="intro">Hello! I'm a professional with broad knowledge in the fields of information technology and communications. I'm driven by a constant desire to learn and grow, closely following market trends and new technologies. My goal is to apply my knowledge to optimize and secure systems, always delivering strong technical solutions with the best possible outcome.</p>
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.linkedin.com/in/zisis-trigkas/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="https://github.com/zisistrigkas" target="_blank"><i class="fab fa-github"></i></a>
@@ -473,28 +523,25 @@
                 </div>
             </section>
             <hr class="m-0" />
-        </div>
-    </body>
-</html>
-            
+
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">ΕΚΠΑΙΔΕΥΣΗ</h2>
+                    <h2 class="mb-5" data-i18n="edu_h">EDUCATION</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Πανεπιστήμιο Ιωαννίνων</h3>
+                            <h3 class="mb-0" data-i18n="uni1">University of Ioannina</h3>
                             <div class="subheading mb-3">Bachelor of Mathematics</div>
-                            <div>Ειδίκευση Γ΄ - Εφαρμοσμένα Μαθηματικά και Πληροφορική</div>
+                            <div data-i18n="uni1_spec">Specialization C - Applied Mathematics and Informatics</div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Οκτώβριος 2019 - Σήμερα</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary" data-i18n="uni1_date">October 2019 - Present</span></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">ΣΑΕΚ ΔΕΛΤΑ 360° Πάτρας</h3>
+                            <h3 class="mb-0" data-i18n="uni2">DELTA 360° Vocational Training Institute of Patras</h3>
                             <div class="subheading mb-3">Software Engineering</div>
-                            <div>Πρακτική Άσκηση - Τεχνικός Πληροφορικής σε εργοστασιακή μονάδα.</div>
+                            <div data-i18n="uni2_desc">Internship - IT Technician at a factory plant.</div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Οκτώβριος 2021 - Ιούνιος 2023</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary" data-i18n="uni2_date">October 2021 - June 2023</span></div>
                     </div>
                 </div>
             </section>
@@ -502,155 +549,130 @@
 
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">ΕΜΠΕΙΡΙΑ</h2>
+                    <h2 class="mb-5" data-i18n="exp_h">EXPERIENCE</h2>
                     
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">IT Technician & Freelance Developer</h3>
-                            <p>Σχεδίαση, ανάπτυξη και συντήρηση custom λογισμικού, desktop εφαρμογών και web εφαρμογών κυρίως σε Python αλλά και σε συνδυασμό με άλλες γλώσσες προγραμματισμού. Παράλληλη παροχή τεχνικών υπηρεσιών υποστήριξης, troubleshooting λογισμικού.</p>
+                            <h3 class="mb-0">IT Technician &amp; Freelance Developer</h3>
+                            <p data-i18n="exp1_desc">Design, development and maintenance of custom software, desktop applications and web applications, mainly in Python and combined with other programming languages. I also provide technical support services and software troubleshooting.</p>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Ιούλιος 2023 - Σήμερα</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary" data-i18n="exp1_date">July 2023 - Present</span></div>
                     </div> 
                     
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Robotics & IT Technician</h3>
-                            <div class="subheading mb-3">ARKTOS ILLUMINATION A.E.</div>
-                            <p>Υπεύθυνος για τον χειρισμό, τη συντήρηση και τον επαναπρογραμματισμό βιομηχανικού ρομποτικού βραχίονα ABB (μοντέλο IRB 7600). Υλοποίηση παραμετροποιήσεων και ανάπτυξη κώδικα 
-                                στην custom γλώσσα προγραμματισμού του κατασκευαστή εντός του 3D περιβάλλοντος λογισμικού, με σκοπό την επέκταση της κίνησης σε επιπλέον άξονες. Παράλληλη παροχή τεχνικών υπηρεσιών, όπως συντήρηση του harware και troubleshooting λογισμικού στη γραμμή παραγωγής της εταιρείας.</p>
+                            <h3 class="mb-0">Robotics &amp; IT Technician</h3>
+                            <div class="subheading mb-3" data-i18n="exp2_co">ARKTOS ILLUMINATION S.A.</div>
+                            <p data-i18n="exp2_desc">Responsible for operating, maintaining and reprogramming an ABB industrial robotic arm (model IRB 7600). I implemented parameter configurations and developed code in the manufacturer's proprietary programming language within the 3D software environment, in order to extend the robot's motion to additional axes. I also provided technical services, such as hardware maintenance and software troubleshooting on the company's production line.</p>
                         </div>
                         <div class="flex-shrink-0">
-                            <span class="text-primary">Ιούνιος 2022 - Δεκέμβριος 2024</span>
+                            <span class="text-primary" data-i18n="exp2_date">June 2022 - December 2024</span>
                         </div>
                     </div>
                 </div>
             </section>
             <hr class="m-0" />
 
-<section class="resume-section" id="projects">
-    <div class="resume-section-content">
-        <h2 class="mb-5">ΠΡΟΣΩΠΙΚΑ PROJECTS</h2>
+            <section class="resume-section" id="projects">
+                <div class="resume-section-content">
+                    <h2 class="mb-5" data-i18n="proj_h">PERSONAL PROJECTS</h2>
 
-        <div class="container-fluid p-0">
-            <div class="row justify-content-start">
+                    <div class="container-fluid p-0">
+                        <div class="row justify-content-start">
 
-                <div class="col-12 col-md-6 mb-4">
-                    <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
-                        <div>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="mb-0" style="font-weight: 700;">Η ΑΣΠΙΔΑ ΤΩΝ ΦΑΚΕΛΩΝ</h4>
-                                <span class="badge bg-primary">Python / Tkinter</span>
+                            <div class="col-12 col-md-6 mb-4">
+                                <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h4 class="mb-0" style="font-weight: 700;" data-i18n="p1_t">FOLDER SHIELD</h4>
+                                            <span class="badge bg-primary">Python / Tkinter</span>
+                                        </div>
+                                        <p class="text-muted small mb-3">Advanced Encryption Application</p>
+                                        <p class="mb-3" data-i18n="p1_d">Development of a desktop application for securing and encrypting folders in real time. It uses the AES-256 algorithm.</p>
+                                    </div>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/eqD9LRJ23EA">
+                                            <i class="fas fa-play me-1"></i> WATCH DEMO
+                                        </button>
+                                        <a href="https://github.com/zisistrigkas/folder-shield-pro" target="_blank" class="btn btn-sm btn-outline-primary px-3">
+                                            <i class="fab fa-github me-1"></i> VIEW CODE
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-muted small mb-3">Advanced Encryption Application</p>
-                            <p class="mb-3">Ανάπτυξη desktop εφαρμογής για την ασφάλιση και κρυπτογράφηση φακέλων σε πραγματικό χρόνο. Χρησιμοποιεί τον αλγόριθμο AES-256.</p>
-                        </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/eqD9LRJ23EA">
-                                <i class="fas fa-play me-1"></i> WATCH DEMO
-                            </button>
-                            <a href="https://github.com/zisistrigkas/folder-shield-pro" target="_blank" class="btn btn-sm btn-outline-primary px-3">
-                                <i class="fab fa-github me-1"></i> VIEW CODE
-                            </a>
+
+                            <div class="col-12 col-md-6 mb-4">
+                                <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h4 class="mb-0" style="font-weight: 700;" data-i18n="p2_t">UNBEATABLE TIC-TAC-TOE</h4>
+                                            <span class="badge bg-primary">Python / Tkinter</span>
+                                        </div>
+                                        <p class="text-muted small mb-3">AI Game Development</p>
+                                        <p class="mb-3" data-i18n="p2_d">Development of a Tic-Tac-Toe desktop application using the Minimax algorithm, creating an unbeatable opponent for the user.</p>
+                                    </div>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/CpskzAdY4w0">
+                                            <i class="fas fa-play me-1"></i> WATCH DEMO
+                                        </button>
+                                        <a href="https://github.com/zisistrigkas/tic-tac-toe-ai" target="_blank" class="btn btn-sm btn-outline-primary px-3">
+                                            <i class="fab fa-github me-1"></i> VIEW CODE
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 mb-4">
+                                <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h4 class="mb-0" style="font-weight: 700;" data-i18n="p3_t">CASINO FRUITS</h4>
+                                            <span class="badge bg-primary">Python / Pygame</span>
+                                        </div>
+                                        <p class="text-muted small mb-3">State Management &amp; Probability</p>
+                                        <p class="mb-3" data-i18n="p3_d">A slot machine simulator using RNG algorithms for fair results and management of the player's balance.</p>
+                                    </div>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/QMrk8UGi-iw">
+                                            <i class="fas fa-play me-1"></i> WATCH DEMO
+                                        </button>
+                                        <a href="https://github.com/zisistrigkas/casino-slots-simulator" target="_blank" class="btn btn-sm btn-outline-primary px-3">
+                                            <i class="fab fa-github me-1"></i> VIEW CODE
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 mb-4">
+                                <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h4 class="mb-0" style="font-weight: 700;" data-i18n="p4_t">SMART CONVERTER</h4>
+                                            <span class="badge bg-primary">Python / Tkinter</span>
+                                        </div>
+                                        <p class="text-muted small mb-3">UI/UX &amp; Conversions Utility</p>
+                                        <p class="mb-3" data-i18n="p4_d">A unit conversion application with dynamic value updates and an emphasis on accuracy.</p>
+                                    </div>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/gUWfjGs54ME">
+                                            <i class="fas fa-play me-1"></i> WATCH DEMO
+                                        </button>
+                                        <a href="https://github.com/zisistrigkas/unit-converter-pro" target="_blank" class="btn btn-sm btn-outline-primary px-3">
+                                            <i class="fab fa-github me-1"></i> VIEW CODE
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-6 mb-4">
-                    <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
-                        <div>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="mb-0" style="font-weight: 700;">ΑΗΤΤΗΤΗ ΤΡΙΛΙΖΑ</h4>
-                                <span class="badge bg-primary">Python / Tkinter</span>
-                            </div>
-                            <p class="text-muted small mb-3">AI Game Development</p>
-                            <p class="mb-3">Ανάπτυξη desktop εφαρμογής Τρίλιζας με τον αλγόριθμο Minimax, δημιουργώντας έναν αήττητο αντίπαλο για τον χρήστη.</p>
-                        </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/CpskzAdY4w0">
-                                <i class="fas fa-play me-1"></i> WATCH DEMO
-                            </button>
-                            <a href="https://github.com/zisistrigkas/tic-tac-toe-ai" target="_blank" class="btn btn-sm btn-outline-primary px-3">
-                                <i class="fab fa-github me-1"></i> VIEW CODE
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 mb-4">
-                    <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
-                        <div>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="mb-0" style="font-weight: 700;">ΦΡΟΥΤΑΚΙΑ ΣΤΟ ΚΑΖΙΝΟ</h4>
-                                <span class="badge bg-primary">Python / Pygame</span>
-                            </div>
-                            <p class="text-muted small mb-3">State Management & Probability</p>
-                            <p class="mb-3">Προσομοιωτής κουλοχέρη με χρήση αλγορίθμων RNG για δίκαια αποτελέσματα και διαχείριση κεφαλαίου χρήστη.</p>
-                        </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/QMrk8UGi-iw">
-                                <i class="fas fa-play me-1"></i> WATCH DEMO
-                            </button>
-                            <a href="https://github.com/zisistrigkas/casino-slots-simulator" target="_blank" class="btn btn-sm btn-outline-primary px-3">
-                                <i class="fab fa-github me-1"></i> VIEW CODE
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 mb-4">
-                    <div class="p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between project-card">
-                        <div>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="mb-0" style="font-weight: 700;">ΕΞΥΠΝΟΣ ΜΕΤΑΤΡΟΠΕΑΣ</h4>
-                                <span class="badge bg-primary">Python / Tkinter</span>
-                            </div>
-                            <p class="text-muted small mb-3">UI/UX & Conversions Utility</p>
-                            <p class="mb-3">Εφαρμογή μετατροπής μονάδων μέτρησης με δυναμική ενημέρωση τιμών και έμφαση στην ακρίβεια.</p>
-                        </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button type="button" class="btn btn-sm btn-primary px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/gUWfjGs54ME">
-                                <i class="fas fa-play me-1"></i> WATCH DEMO
-                            </button>
-                            <a href="https://github.com/zisistrigkas/unit-converter-pro" target="_blank" class="btn btn-sm btn-outline-primary px-3">
-                                <i class="fab fa-github me-1"></i> VIEW CODE
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content border-0 bg-transparent">
-            <div class="modal-body p-0">
-                <div class="ratio ratio-16x9">
-                    <iframe id="videoPlayer" src="" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    const videoModal = document.getElementById('videoModal');
-    videoModal.addEventListener('show.bs.modal', event => {
-        const button = event.relatedTarget;
-        const videoUrl = button.getAttribute('data-video-url');
-        document.getElementById('videoPlayer').setAttribute('src', videoUrl);
-    });
-    videoModal.addEventListener('hidden.bs.modal', () => {
-        document.getElementById('videoPlayer').setAttribute('src', '');
-    });
-</script>
+            </section>
             <hr class="m-0" />
 
             <section class="resume-section" id="awards">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">ΠΙΣΤΟΠΟΙΗΣΕΙΣ</h2>
+                    <h2 class="mb-5" data-i18n="cert_h">CERTIFICATIONS</h2>
                     <div class="row text-center justify-content-start">
                         <div class="col-6 col-md-4 col-lg-3 mb-4">
                             <div class="p-4 rounded shadow-sm d-flex flex-column align-items-center justify-content-between cert-card">
@@ -660,8 +682,9 @@
                         </div>
                         <div class="col-6 col-md-4 col-lg-3 mb-4">
                             <div class="p-4 rounded shadow-sm d-flex flex-column align-items-center justify-content-between cert-card">
-                                <div class="d-flex align-items-center justify-content-center flex-grow-1 mb-3"><img src="assets/img/azure.png" alt="Microsoft AZ-900 Logo" class="img-fluid" style="max-height: 90px; object-fit: contain;"></div>
-                                <div class="small fw-bold text-uppercase lh-sm">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+                                <!-- Βάλε το badge του AZ-104 ως assets/img/az104.png. Αν δεν υπάρχει ακόμα, εμφανίζεται προσωρινά το azure.png -->
+                                <div class="d-flex align-items-center justify-content-center flex-grow-1 mb-3"><img src="assets/img/az104.png" onerror="this.onerror=null;this.src='assets/img/azure.png';" alt="Microsoft AZ-104 Logo" class="img-fluid" style="max-height: 90px; object-fit: contain;"></div>
+                                <div class="small fw-bold text-uppercase lh-sm">Microsoft Certified: Azure Administrator Associate (AZ-104)</div>
                             </div>
                         </div>
                     </div>
@@ -670,36 +693,133 @@
             <hr class="m-0" />
             
             <section class="resume-section" id="skills">
-    <div class="resume-section-content">
-        <h2 class="mb-5">ΔΕΞΙΟΤΗΤΕΣ</h2>
-        <div class="subheading mb-3">ΓΛΩΣΣΕΣ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΥ & ΤΕΧΝΟΛΟΓΙΕΣ</div>
-        <ul class="list-inline dev-icons">
-            <li class="list-inline-item" title="Python"><i class="fab fa-python"></i></li>
-            <li class="list-inline-item" title="C++"><img src="assets/img/c++logo.png" alt="C++ Logo" width="48" height="48" style="display: inline-block; vertical-align: middle; filter: grayscale(30%);"></li>
-            <li class="list-inline-item" title="HTML5"><i class="fab fa-html5"></i></li>
-            <li class="list-inline-item" title="CSS3"><i class="fab fa-css3-alt"></i></li>
-            <li class="list-inline-item" title="JavaScript"><i class="fab fa-js"></i></li>
-        </ul>
-        <div class="subheading mb-3">Προσόντα</div>
-        <ul class="fa-ul mb-0">
-            <li><span class="fa-li"><i class="fas fa-check"></i></span>Πολύ εργατικός και με διάθεση για μάθηση</li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span>Ικανότητα επίλυσης προβλημάτων και λήψης αποφάσεων</li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span>Συνεπής και υπεύθυνος στην εργασία μου</li>
-            <li><span class="fa-li"><i class="fas fa-check"></i></span>Καινοτόμες ιδέες και δημιουργικός τρόπος σκέψης</li>
-        </ul>
-    </div>
-</section>
-<hr class="m-0" />
+                <div class="resume-section-content">
+                    <h2 class="mb-5" data-i18n="skills_h">SKILLS</h2>
+                    <div class="subheading mb-3" data-i18n="skills_sub">PROGRAMMING LANGUAGES &amp; TECHNOLOGIES</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item" title="Python"><i class="fab fa-python"></i></li>
+                        <li class="list-inline-item" title="C++"><img src="assets/img/c++logo.png" alt="C++ Logo" width="48" height="48" style="display: inline-block; vertical-align: middle; filter: grayscale(30%);"></li>
+                        <li class="list-inline-item" title="HTML5"><i class="fab fa-html5"></i></li>
+                        <li class="list-inline-item" title="CSS3"><i class="fab fa-css3-alt"></i></li>
+                        <li class="list-inline-item" title="JavaScript"><i class="fab fa-js"></i></li>
+                        <li class="list-inline-item" title="Microsoft Azure">
+                            <svg viewBox="0 0 24 24" role="img" aria-label="Microsoft Azure" xmlns="http://www.w3.org/2000/svg"><path d="M5.483 21.3H24L14.025 4.013l-3.038 8.347 5.836 6.938L5.483 21.3zM13.23 2.7L6.105 8.677 0 19.253h5.505v.014L13.23 2.7z"/></svg>
+                        </li>
+                    </ul>
+                    <div class="subheading mb-3" data-i18n="quals">Qualities</div>
+                    <ul class="fa-ul mb-0">
+                        <li><span class="fa-li"><i class="fas fa-check"></i></span><span data-i18n="q1">Hard-working and eager to learn</span></li>
+                        <li><span class="fa-li"><i class="fas fa-check"></i></span><span data-i18n="q2">Problem-solving and decision-making ability</span></li>
+                        <li><span class="fa-li"><i class="fas fa-check"></i></span><span data-i18n="q3">Consistent and responsible at work</span></li>
+                        <li><span class="fa-li"><i class="fas fa-check"></i></span><span data-i18n="q4">Innovative ideas and a creative way of thinking</span></li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
             
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">ΕΝΔΙΑΦΕΡΟΝΤΑ</h2>
-                    <p>Παράλληλα με τη δραστηριότητά μου στον χώρο της τεχνολογίας, η μουσική αποτελεί ένα μεγάλο και αναπόσπαστο κομμάτι της ζωής μου εδώ και πολλά χρόνια. Ασχολούμαι ενεργά με το τραγούδι, τη σύνθεση και τη συγγραφή στίχων, ενώ πραγματοποιώ τακτικές ζωντανές εμφανίσεις σε χώρους εστίασης και ψυχαγωγίας.</p>
-                    <p class="mb-0">Στον ελεύθερό μου χρόνο, μου αρέσει να ταξιδεύω, να γνωρίζω νέους ανθρώπους και να ανακαλύπτω νέους πολιτισμούς. Ενώ όταν βρίσκομαι στο σπίτι, αφιερώνω το μεγαλύτερο μέρος του χρόνου μου στον υπολογιστή, εστιάζοντας στη συνεχή εξέλιξη μου και την απόκτηση νέων γνώσεων στον τομέα της πληροφορικής και της τεχνολογίας.</p>
+                    <h2 class="mb-5" data-i18n="int_h">INTERESTS</h2>
+                    <p data-i18n="int1">Alongside my work in technology, music has been a major and inseparable part of my life for many years. I'm actively involved in singing, composing and writing lyrics, and I perform live on a regular basis at restaurants and entertainment venues.</p>
+                    <p class="mb-0" data-i18n="int2">In my free time, I enjoy traveling, meeting new people and discovering new cultures. When I'm at home, I spend most of my time at the computer, focusing on my continuous development and on gaining new knowledge in IT and technology.</p>
                 </div>
             </section>
         </div>
+
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content border-0 bg-transparent">
+                    <div class="modal-body p-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe id="videoPlayer" src="" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
+        <script>
+            // ▶ Video modal
+            const videoModal = document.getElementById('videoModal');
+            videoModal.addEventListener('show.bs.modal', event => {
+                const button = event.relatedTarget;
+                const videoUrl = button.getAttribute('data-video-url');
+                document.getElementById('videoPlayer').setAttribute('src', videoUrl);
+            });
+            videoModal.addEventListener('hidden.bs.modal', () => {
+                document.getElementById('videoPlayer').setAttribute('src', '');
+            });
+
+            // 🌐 Language switcher (English by default, Greek on demand)
+            // Τα αγγλικά διαβάζονται απευθείας από το HTML, τα ελληνικά είναι εδώ.
+            const EL = {
+                brand: 'ΖΗΣΗΣ ΤΡΙΓΚΑΣ',
+                nav_about: 'ΣΧΕΤΙΚΑ ΜΕ ΜΕΝΑ',
+                nav_edu: 'ΕΚΠΑΙΔΕΥΣΗ',
+                nav_exp: 'ΕΜΠΕΙΡΙΑ',
+                nav_proj: 'PROJECTS',
+                nav_cert: 'ΠΙΣΤΟΠΟΙΗΣΕΙΣ',
+                nav_skills: 'ΔΕΞΙΟΤΗΤΕΣ',
+                nav_int: 'ΕΝΔΙΑΦΕΡΟΝΤΑ',
+                h1: 'ΖΗΣΗΣ <span class="text-primary">ΤΡΙΓΚΑΣ</span>',
+                contact: ' ΑΘΗΝΑ, ΕΛΛΑΔΑ - (+30) 6908297370 - <a href="mailto:zisisofficial@gmail.com" style="color: #00f0ff;">zisisofficial@gmail.com</a>',
+                intro: 'Γειά σας! Είμαι ένας επαγγελματίας με ευρεία γνώση στο χώρο της πληροφορικής και της επικοινωνίας. Χαρακτηρίζομαι από τη συνεχή διάθεση μου για μάθηση και εξέλιξη, παρακολουθώντας στενά τις τάσεις της αγοράς και τις νέες τεχνολογίες. Στόχος μου είναι να εφαρμόζω τις γνώσεις μου με σκοπό τη βελτιστοποίηση και την ασφάλεια των συστημάτων, προσφέροντας πάντα ισχυρές τεχνικές λύσεις με το καλύτερο δυνατό αποτέλεσμα.',
+                edu_h: 'ΕΚΠΑΙΔΕΥΣΗ',
+                uni1: 'Πανεπιστήμιο Ιωαννίνων',
+                uni1_spec: 'Ειδίκευση Γ΄ - Εφαρμοσμένα Μαθηματικά και Πληροφορική',
+                uni1_date: 'Οκτώβριος 2019 - Σήμερα',
+                uni2: 'ΣΑΕΚ ΔΕΛΤΑ 360° Πάτρας',
+                uni2_desc: 'Πρακτική Άσκηση - Τεχνικός Πληροφορικής σε εργοστασιακή μονάδα.',
+                uni2_date: 'Οκτώβριος 2021 - Ιούνιος 2023',
+                exp_h: 'ΕΜΠΕΙΡΙΑ',
+                exp1_desc: 'Σχεδίαση, ανάπτυξη και συντήρηση custom λογισμικού, desktop εφαρμογών και web εφαρμογών κυρίως σε Python αλλά και σε συνδυασμό με άλλες γλώσσες προγραμματισμού. Παράλληλη παροχή τεχνικών υπηρεσιών υποστήριξης, troubleshooting λογισμικού.',
+                exp1_date: 'Ιούλιος 2023 - Σήμερα',
+                exp2_co: 'ARKTOS ILLUMINATION A.E.',
+                exp2_desc: 'Υπεύθυνος για τον χειρισμό, τη συντήρηση και τον επαναπρογραμματισμό βιομηχανικού ρομποτικού βραχίονα ABB (μοντέλο IRB 7600). Υλοποίηση παραμετροποιήσεων και ανάπτυξη κώδικα στην custom γλώσσα προγραμματισμού του κατασκευαστή εντός του 3D περιβάλλοντος λογισμικού, με σκοπό την επέκταση της κίνησης σε επιπλέον άξονες. Παράλληλη παροχή τεχνικών υπηρεσιών, όπως συντήρηση του hardware και troubleshooting λογισμικού στη γραμμή παραγωγής της εταιρείας.',
+                exp2_date: 'Ιούνιος 2022 - Δεκέμβριος 2024',
+                proj_h: 'ΠΡΟΣΩΠΙΚΑ PROJECTS',
+                p1_t: 'Η ΑΣΠΙΔΑ ΤΩΝ ΦΑΚΕΛΩΝ',
+                p1_d: 'Ανάπτυξη desktop εφαρμογής για την ασφάλιση και κρυπτογράφηση φακέλων σε πραγματικό χρόνο. Χρησιμοποιεί τον αλγόριθμο AES-256.',
+                p2_t: 'ΑΗΤΤΗΤΗ ΤΡΙΛΙΖΑ',
+                p2_d: 'Ανάπτυξη desktop εφαρμογής Τρίλιζας με τον αλγόριθμο Minimax, δημιουργώντας έναν αήττητο αντίπαλο για τον χρήστη.',
+                p3_t: 'ΦΡΟΥΤΑΚΙΑ ΣΤΟ ΚΑΖΙΝΟ',
+                p3_d: 'Προσομοιωτής κουλοχέρη με χρήση αλγορίθμων RNG για δίκαια αποτελέσματα και διαχείριση κεφαλαίου χρήστη.',
+                p4_t: 'ΕΞΥΠΝΟΣ ΜΕΤΑΤΡΟΠΕΑΣ',
+                p4_d: 'Εφαρμογή μετατροπής μονάδων μέτρησης με δυναμική ενημέρωση τιμών και έμφαση στην ακρίβεια.',
+                cert_h: 'ΠΙΣΤΟΠΟΙΗΣΕΙΣ',
+                skills_h: 'ΔΕΞΙΟΤΗΤΕΣ',
+                skills_sub: 'ΓΛΩΣΣΕΣ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΥ & ΤΕΧΝΟΛΟΓΙΕΣ',
+                quals: 'Προσόντα',
+                q1: 'Πολύ εργατικός και με διάθεση για μάθηση',
+                q2: 'Ικανότητα επίλυσης προβλημάτων και λήψης αποφάσεων',
+                q3: 'Συνεπής και υπεύθυνος στην εργασία μου',
+                q4: 'Καινοτόμες ιδέες και δημιουργικός τρόπος σκέψης',
+                int_h: 'ΕΝΔΙΑΦΕΡΟΝΤΑ',
+                int1: 'Παράλληλα με τη δραστηριότητά μου στον χώρο της τεχνολογίας, η μουσική αποτελεί ένα μεγάλο και αναπόσπαστο κομμάτι της ζωής μου εδώ και πολλά χρόνια. Ασχολούμαι ενεργά με το τραγούδι, τη σύνθεση και τη συγγραφή στίχων, ενώ πραγματοποιώ τακτικές ζωντανές εμφανίσεις σε χώρους εστίασης και ψυχαγωγίας.',
+                int2: 'Στον ελεύθερό μου χρόνο, μου αρέσει να ταξιδεύω, να γνωρίζω νέους ανθρώπους και να ανακαλύπτω νέους πολιτισμούς. Ενώ όταν βρίσκομαι στο σπίτι, αφιερώνω το μεγαλύτερο μέρος του χρόνου μου στον υπολογιστή, εστιάζοντας στη συνεχή εξέλιξη μου και την απόκτηση νέων γνώσεων στον τομέα της πληροφορικής και της τεχνολογίας.'
+            };
+
+            const i18nNodes = document.querySelectorAll('[data-i18n]');
+            i18nNodes.forEach(node => { node.dataset.en = node.innerHTML; });
+
+            const langBtn = document.getElementById('langToggle');
+            const langLabel = document.getElementById('langLabel');
+            let currentLang = 'en';
+
+            function setLang(lang) {
+                i18nNodes.forEach(node => {
+                    const key = node.dataset.i18n;
+                    node.innerHTML = (lang === 'el' && EL[key] !== undefined) ? EL[key] : node.dataset.en;
+                });
+                document.documentElement.lang = lang;
+                langLabel.textContent = lang === 'el' ? 'EN' : 'EL';
+                langBtn.setAttribute('aria-label', lang === 'el' ? 'Switch language to English' : 'Switch language to Greek');
+                currentLang = lang;
+            }
+
+            langBtn.addEventListener('click', () => setLang(currentLang === 'en' ? 'el' : 'en'));
+        </script>
     </body>
 </html>
