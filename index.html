@@ -195,7 +195,9 @@
             }
 
             /* 🚀 HERO */
-            .hero-grid { display: grid; gap: 3rem; align-items: center; }
+            .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; align-items: center; }
+            .hero-text { min-width: 0; }
+            @media (max-width: 1399.98px) { .hero-widget { display: flex; justify-content: center; } }
             @media (min-width: 1400px) { .hero-grid { grid-template-columns: minmax(0, 1fr) auto; } }
             .eyebrow {
                 display: flex;
@@ -634,12 +636,12 @@
             .tech .label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; }
             .tech:hover { transform: translateY(-4px); color: var(--green); border-color: var(--line-strong); box-shadow: 0 0 22px rgba(0, 255, 102, 0.15); }
             .tech:hover .icon-box img { filter: none; opacity: 1; }
-            .qual-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+            .qual-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 1rem; }
             .qual { display: flex; align-items: flex-start; gap: 0.8rem; padding: 1rem 1.2rem; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
             .qual .ic { color: var(--green); margin-top: 0.1rem; }
 
             /* 🎵 INTERESTS */
-            .int-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+            .int-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 1.2rem; }
             .glass-card { display: flex; gap: 1.2rem; padding: 1.6rem; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
             .glass-card:hover { border-color: var(--line-strong); box-shadow: 0 8px 30px rgba(0, 255, 102, 0.08); }
             .glass-card p { margin: 0; line-height: 1.75; color: var(--muted); }
@@ -740,7 +742,12 @@
                 .tl-item { padding: 1.1rem; }
                 .tl-item::before { left: calc(-1.2rem - 6.5px); }
                 .tl-head h3 { font-size: 1.4rem; }
-                section.resume-section h2 { gap: 0.7rem; }
+                section.resume-section h2 { gap: 0.7rem; font-size: clamp(1.9rem, 8.5vw, 3rem); overflow-wrap: anywhere; }
+                .project-card .d-flex.align-items-center { flex-wrap: wrap; gap: 0.4rem 0.6rem; }
+                .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+                .stat { padding: 0.8rem 0.6rem; }
+                .stat .num { font-size: 2rem; }
+                .stat .lbl { font-size: 0.56rem; letter-spacing: 0.05em; overflow-wrap: anywhere; }
             }
 
             /* ✨ SCROLL REVEAL */
